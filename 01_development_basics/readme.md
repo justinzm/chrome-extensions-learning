@@ -1,9 +1,5 @@
 ##  Chrome 扩展开发的基础知识
 
-
-
-[TOC]
-
 ### 你好,扩展
 
 我们将创建一个“Hello, Extensions”示例，在本地加载扩展。
@@ -132,4 +128,4 @@ console.log("This is a popup!) // ❌ broken code
 
 有很多方法可以构建扩展项目；但是，您必须将 manifest.json 文件放在扩展的**根目录**中。下面是一个结构示例：
 
-![扩展文件夹的内容：manifest.json、background.js、scripts 文件夹、popup 文件夹和 images 文件夹。](./images/0108.png)
+![扩展文件夹的内容：manifest.json、background.js、scripts 文件夹、popup 文件夹和 images 文件夹。](.\images\0108.png)
