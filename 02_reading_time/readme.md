@@ -6,4 +6,5 @@
 
 ### 构建扩展
 
-首先，创建一个名为`reading-time`保存扩展文件的新目录。如果您愿意，可以从[GitHub](https://github.com/GoogleChrome/chrome-extensions-samples/tree/main/tutorials/reading-time)下载完整的源代码。
+首先，创建一个名为`reading-time`保存扩展文件的新目录。如果您愿意，可以从[GitHub](https://github.com/justinzm/chrome-extensions-learning/tree/main/02_reading_time)下载完整的源代码。
+
