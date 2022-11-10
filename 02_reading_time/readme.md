@@ -15,9 +15,9 @@
 ```json
 {
   "manifest_version": 3,
-  "name": "Reading time",
-  "version": "1.0",
-  "description": "Add the reading time to Chrome Extension documentation articles",
+  "name": "阅读时间计算器",
+  "version": "0.0.1",
+  "description": "对新浪新闻文章进行计算阅读时间并显示在标题下方",
 }
 ```
 
@@ -68,14 +68,17 @@
 
 扩展程序可以运行读取和修改页面内容的脚本。这些被称为**content_scripts**。他们在一个孤立的世界中（后面content_scripts课程会详细介绍），这意味着他们可以更改他们的 JavaScript 环境，而不会与他们的主机页面或其他扩展程序的内容脚本发生冲突。
 
-将以下代码添加到`manifest.json`以注册名为`content.js`.
+将以下代码添加到`manifest.json`以注册名为`content.js`, 还是不太喜欢写原始的js，用起最爱的jquery吧。
 
 ```
 {
   ...
   "content_scripts": [
     {
-      "js": ["scripts/content.js"],
+      "js": [
+      	"scripts/jquery.min.js",
+      	"scripts/content.js"
+      ],
       "matches": [
         "https://news.sina.com.cn/*",
         "https://sports.sina.com.cn/*"
@@ -92,3 +95,29 @@
 内容脚本可以使用标准文档对象模型(DOM) 来读取和更改页面内容。扩展将首先检查页面是否包含该`<div class="article">`元素。然后，它将计算该元素中的所有单词并创建一个显示总阅读时间的段落。
 
 `content.js`在名为的文件夹中创建一个名为的文件`scripts`并添加以下代码：
+
+```
+$(function(){
+    // 开始写 jQuery 代码...
+    // 找到正文
+    const article = $(".article").text();
+
+    // 提取汉字
+    const reg = /[\u4e00-\u9fa5]/g;
+    const articles = article.match(reg);
+    context = articles.join("");
+
+    // 获取字数及计算阅读时间
+    const context_num = context.length;
+    const readingTime = Math.round(context_num / 200);
+    
+    const con = "<p>⏱️ " + readingTime + " 分钟阅读完</p>";
+    
+    // 加载到新闻标题后
+    $("h1.main-title").after(con);
+});
+```
+
+#### 第五步 查看结果
+
+![image-20221110214400634](./img/0201.png)

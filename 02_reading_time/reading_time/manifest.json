@@ -11,7 +11,10 @@
     },
     "content_scripts": [
         {
-            "js": ["scripts/content.js"],
+            "js": [
+                "scripts/jquery.min.js",
+                "scripts/content.js"
+            ],
             "matches": [
                 "https://news.sina.com.cn/*",
                 "https://sports.sina.com.cn/*"
