@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "阅读时间计算器",
+    "version": "0.0.1",
+    "description": "对新浪新闻文章进行计算阅读时间并显示在标题下方",
+    "icons": {
+        "16": "images/icon-16.png",
+        "32": "images/icon-32.png",
+        "48": "images/icon-48.png",
+        "128": "images/icon-128.png"
+    },
+    "content_scripts": [
+        {
+            "js": ["scripts/content.js"],
+            "matches": [
+                "https://news.sina.com.cn/*",
+                "https://sports.sina.com.cn/*"
+            ]
+        }
+    ]
+}
