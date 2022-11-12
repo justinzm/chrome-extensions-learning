@@ -8,4 +8,4 @@
 
 第2课：[案例-“阅读时间“扩展](https://github.com/justinzm/chrome-extensions-learning/blob/main/02_reading_time)
 
-第2课：[案例-“聚焦阅读“扩展](https://github.com/justinzm/chrome-extensions-learning/blob/main/03_focus_mode)
+第3课：[案例-“聚焦阅读“扩展](https://github.com/justinzm/chrome-extensions-learning/blob/main/03_focus_mode)
