@@ -7,3 +7,5 @@
 第1课：[Chrome 扩展开发的基础知识](https://github.com/justinzm/chrome-extensions-learning/blob/main/01_development_basics)
 
 第2课：[案例-“阅读时间“扩展](https://github.com/justinzm/chrome-extensions-learning/blob/main/02_reading_time)
+
+第2课：[案例-“聚焦阅读“扩展](https://github.com/justinzm/chrome-extensions-learning/blob/main/03_focus_mode)
