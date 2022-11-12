@@ -1,5 +1,9 @@
 ## manifest.json配置项参数说明
 
+扩展manifest向浏览器提供有关扩展的信息，例如最重要的文件和扩展可能使用的功能。当有新的manifest版本时，扩展平台功能会发生变化。
+
+Manifest V3 专注于该愿景的三大支柱：隐私、安全和性能，同时保留和改进我们的能力和网络基础。
+
 ### manifest.json配置文件
 
 ```
@@ -107,4 +111,29 @@
   }]
 }
 ```
+
+#### action 
+
+使用`chrome.action`API 控制 Google Chrome 工具栏中的扩展程序图标。必填选项。
+
+为了使用`chrome.action`API，您需要指定 "manifest_version"`等于`3`或更高，并将`action 密钥包含在您的清单文件中。
+
+```
+{
+  "name": "Action Extension",
+  ...
+  "action": {
+    "default_icon": {              // 可选
+      "16": "images/icon16.png",   // 可选
+      "24": "images/icon24.png",   // 可选
+      "32": "images/icon32.png"    // 可选
+    },
+    "default_title": "Click Me",   // 可选, 显示在工具提示
+    "default_popup": "popup.html"  // 可选
+  },
+  ...
+}
+```
+
+
 
