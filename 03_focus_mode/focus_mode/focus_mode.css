@@ -1,0 +1,7 @@
+body > .main-content > .top-banner,
+body > .main-content > .article-content > .article-content-left > .top-ad,
+body > .main-content > .article-content > .article-content-left > .blk-comment,
+body > .main-content > .article-content > .article-content-left > .blk-related,
+body > .main-content > .article-content > .article-content-right{
+  display: none;
+}
