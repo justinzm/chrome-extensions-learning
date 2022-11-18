@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script defer src="index.js"></script>
+  <link rel="stylesheet" href="../third-party/awsm/awsm.css">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <main>
+    <section>
+      <h1>Action API Demo</h1>
+      <p>在尝试使用Action api之前，我们建议您将扩展的操作按钮固定在工具栏上，以便更容易观察。 </p>
+      <img src="../images/pin-action.png">
+    </section>
+
+    <section id="toggle-state">
+      <h2>enable / disable</h2>
+
+      <p>点击下面的启用状态按钮，将启用或禁用Chrome工具栏中的扩展按钮。</p>
+
+      <p>当禁用时，单击该动作将不会打开弹出窗口或触发 <code>action.onClicked</code> 事件</a></p>
+
+      <button id="toggle-state-button">启用切换状态</button>
+
+      <div class="flex">
+        <figure>
+          <img src="../images/action-enabled.png">
+          <figcaption>Action enabled</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/action-disabled.png">
+          <figcaption>Action disabled</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="popup">
+      <h2>Popup</h2>
+
+      <p> manifest.json 将action.default_popup的值设置为popups/popup.html。我们可以在运行时使用 action.setPopup 进行修改popup地址</a>.</p>
+
+      <label>
+        选择popup页面<br>
+        <select id="popup-options">
+          <option value="/popups/popup.html">Hello world (default)</option>
+          <option value="/popups/a.html">A</option>
+          <option value="/popups/b.html">B</option>
+          <option value="">onClicked handler</option>
+        </select>
+      </label>
+
+      <div class="spaced">
+        <label>
+          当前popup的值
+          <input type="text" id="current-popup-value" disabled>
+        </label>
+      </div>
+
+      <p>Register a handler to change how the action button behaves. Once changed, clicking the
+      action will open your new favorite website.</p>
+      <button id="onclicked-button">Change action click behavior</button>
+      <button id="onclicked-reset-button">reset</button>
+    </section>
+
+    <!-- badge -->
+
+    <section id="badge-text">
+      <h2>Badge Text</h2>
+
+      <p>The action's badge text is a text overlay with a solid background color. This provides a
+      passive UI surface to share information with the user. It is most commonly used to show a
+      notification count or number of actions taken on the current page.</p>
+
+      <div class="spaced">
+        <label>
+          Enter badge text (live update)<br>
+          <input type="text" id="badge-text-input">
+        </label>
+      </div>
+
+      <div class="flex">
+        <label class="full-width">
+          Current badge text
+          <input type="text" id="current-badge-text" disabled>
+        </label>
+        <button id="clear-badge-button">clear badge text</button>
+      </div>
+
+      <div class="spaced">
+        <button id="set-badge-background-color-button">Randomize badge background color</button>
+      </div>
+
+      <div class="flex">
+        <label class="full-width">
+          Current badge color
+          <input type="text" id="current-badge-bg-color" disabled>
+        </label>
+        <button id="reset-badge-background-color-button">reset badge color</button>
+      </div>
+
+    </section>
+
+    <!-- badge - icon -->
+
+    <section id="setIcon">
+      <h2>Icon</h2>
+
+      <p>The <a
+      href="https://developer.chrome.com/docs/extensions/reference/action/#method-setIcon"><code>action.setIcon</code></a>
+      method allows you to change the action button's icon by either providing the path of an image
+      or the raw <a href="https://developer.mozilla.org/en-US/docs/Web/API/ImageData">ImageData</a>.</p>
+
+      <button id="set-icon-button">set a new action icon</button>
+      <button id="reset-icon-button">reset action icon</button>
+    </section>
+
+    <!-- badge - hover text (title) -->
+
+    <section id="title">
+      <h2>Hover Text</h2>
+
+      <p>The action's title is visible when mousing over the extension's action button.</p>
+
+      <p>This value can be read and changed at runtime using the <a
+      href="https://developer.chrome.com/docs/extensions/reference/action/#method-getTitle"><code>action.getTitle</code></a>
+      and <a
+      href="https://developer.chrome.com/docs/extensions/reference/action/#method-setTitle"><code>action.setTitle</code></a>
+      methods, respectively.</p>
+
+      <div class="spaced">
+        <label>
+          Enter a new title (debounced)<br>
+          <input type="text" id="title-input">
+        </label>
+      </div>
+
+      <div class="flex">
+        <label class="full-width">
+          Current title
+          <input type="text" id="current-title" disabled>
+        </label>
+        <button id="reset-title-button">reset title</button>
+      </div>
+
+      <div class="flex">
+        <figure>
+          <img src="../images/title-no-hover.png">
+          <figcaption>Default appearance</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/title-hover.png">
+          <figcaption>Title appears on hover</figcaption>
+        </figure>
+    </section>
+  </main>
+</body>
+</html>
